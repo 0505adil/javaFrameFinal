@@ -1,0 +1,29 @@
+<div class="margin-8">
+
+</div>
+<section class="service-section overflow-hidden" id="contact" *ngIf="user">
+  <div class="container">
+    <div class="row align-items-center bg-light rounded p-4">
+      <div class="col-lg-12">
+        <h5 class="text-primary mb-3">Добавить задачу</h5>
+        <h3 class="mb-4">AdiletInc</h3>
+        <form class="mt-4" [formGroup]="form" (ngSubmit)="save()">
+          <div class="alert alert-{{errorColor}}" *ngIf="isTrue">
+            {{errorText}}
+          </div>
+          <input formControlName="login" type="email" class="form-control" placeholder="Логин">
+          <br>
+          <input formControlName="password" type="password" class="form-control" placeholder="Пароль">
+          <br>
+          <input formControlName="firstName" type="text" class="form-control" placeholder="Имя">
+          <br>
+          <input formControlName="lastName" type="text" class="form-control" placeholder="Фамилия">
+          <br>
+          <input formControlName="phoneNumber" type="text" class="form-control" placeholder="Номер телефона">
+          <br>
+          <button [disabled]="form.invalid" class="btn btn-primary mt-3" type="submit">Добавить<i data-feather="send" class="icon-xxs icon"></i></button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

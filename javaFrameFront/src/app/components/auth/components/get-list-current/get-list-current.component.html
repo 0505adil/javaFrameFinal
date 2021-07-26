@@ -1,0 +1,36 @@
+<div class="margin-8">
+
+</div>
+<section class="service-section overflow-hidden" id="contact" *ngIf="user">
+  <div class="container">
+    <div class="row align-items-center bg-light rounded p-4">
+      <div class="col-lg-12">
+        <h5 class="text-primary mb-3">Login</h5>
+        <h3 class="mb-4">AdiletInc</h3>
+          <table class="table" *ngIf="todos">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Описание</th>
+              <th scope="col">Дата</th>
+              <th scope="col">Редактировать</th>
+              <th scope="col">Выполнено</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let todo of todos">
+              <th scope="row">{{todo.id}}</th>
+              <td>{{todo.description}}</td>
+              <td>{{todo.currentAt | date}}</td>
+              <td><a [routerLink]="['/auth', 'updateTodo', todo.id]">Редактировать</a></td>
+              <td>
+                <p *ngIf="todo.done == 0" style="color: red; margin-left: 35px"> - </p>
+                <p *ngIf="todo.done == 1" style="color: green; margin-left: 35px"> + </p>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</section>
