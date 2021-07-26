@@ -4,7 +4,7 @@ FrontEndSide in javaFrameFront package
 
 go to the root package of frontend project
 
-npm install
+#code npm install
 
 and 
 
